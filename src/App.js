@@ -1,6 +1,8 @@
 import { Route ,Routes } from 'react-router-dom';
 import './App.css';
 import Adding from './Components/Adding';
+import Banner from './Components/Banner';
+import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Members from './Components/Members';
@@ -13,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
+     
       <Routes>
       <Route
           path="/"
@@ -32,6 +35,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
