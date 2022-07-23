@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import auth from "../firebase.init";
+import Loading from "./Loading";
 
 const SignUp = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -33,7 +34,9 @@ const SignUp = () => {
     navigate(from);
     swal("Yayy", "Sign Up  Successfully Completed ", "success");
   }
-
+if(loading || googleLoading){
+   return <Loading/>
+}
   
   if (error || googleError || updateError) {
    
